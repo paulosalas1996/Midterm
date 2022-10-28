@@ -15,57 +15,63 @@
             <p id="profile-name" class="profile-name-card"></p>
             
             <form class="form-signin" method="post">
-               <!--<span id="reauth-email" class="reauth-email"></span>-->
-
-                <!--dropdown-->
+               
+                //Dropdown list
                 <select name="userSelect"  class="form-control" id="userSelect">
                     <option value="Admin">Admin</option>
                     <option value="Content Manager">Content Manager</option>
-                    <option value="System Users">System Users</option>
+                    <option value="System Users">System User</option>
                 </select>
                 <br>
-                <!--UserName--->
+                //Username
                 <input type="text" name="userName" id="inputEmail" class="form-control" placeholder="User Name" required autofocus>
-                <!---Password--->
+                //Password
                 <input type="password"  name="password" id="inputPassword" class="form-control" placeholder="Password" required>
              
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="Signin">Sign in</button>
             </form>
                 
                 <?php
-                
+                    // for Array list 
                     $users = array(
+                            //0
                             array(
                                 'UserType' => 'Admin',
                                 'Username' => 'admin',
                                 'Password' => 'pass1234'
                             ),
+                            //1
                             array(
                                 'UserType' => 'Admin',
                                 'Username' => 'renmark',
                                 'Password' => 'pogi1234'
                             ),
+                            //2
                             array(
                                 'UserType' =>'Content Manager',
                                 'Username' => 'pepito',
                                 'Password' => 'manaloto'
                             ),
+                            //3
                             array(
                                 'UserType' => 'Content Manager',
                                 'Username' => 'juan',
                                 'Password' => 'delacruz' 
                             ),
+                            //4
                             array(
-                                'UserType' => 'System Users',
+                                'UserType' => 'System User',
                                 'Username' => 'pedro',
                                 'Password' => 'penduko'
                             )        
                     );
+
                     if (isset($_POST['Signin'])) {
                         $status = $_POST['userSelect'];
                         $name = $_POST['userName'];
                         $password = $_POST['password'];
-
+                        
+                        //For Admin
                         if ($status === $users[0]['UserType']) {
                             if ($name === $users[0]['Username']){
                                 if($password === $users[0]['Password'])
@@ -79,6 +85,7 @@
                                         echo '<div class=" alert alert-danger" role="alert">Invalid Username/Password </div>';
                                 }
                         }
+                        //for Contert Manager
                         if ($status === $users[2]['UserType']) {
                             if ($name === $users[2]['Username']){
                                 if($password === $users[2]['Password'])
@@ -92,6 +99,7 @@
                                         echo '<div class=" alert alert-danger" role="alert">Invalid Username/Password </div>';
                                 }
                         }
+                        //for System User
                         if ($status === $users[4]['UserType']) {
                             if ($name === $users[4]['Username']){
                                 if($password === $users[4]['Password'])
@@ -100,11 +108,8 @@
                                 else{
                                     echo '<div class=" alert alert-danger" role="alert">Invalid Username/Password </div>';
                                 }
-                                
                         }
-                       
                     }
-
             ?>
         </div>
     </div>
