@@ -12,11 +12,15 @@
 
     <form action="" method="post">
         <label for="setSize">Select Photo Size:</label>
-        <input type="range" name="setSize" id="setSize" min="10" max="100" step="10" value="60">
+        <input type="range" name="setSize" id="setSize" min="10" max="1000" step="10" value="60">
+
         <br>
+
         <label for="setColor">Select Border Color:</label>
         <input type="color" name="setColor" id="setColor">
+
         <br>
+
         <button type="submit" name="btnProcess">Process</button>
         <br><br>
        
@@ -26,7 +30,7 @@
                 $border = $_POST ['setColor'];
             ?>
         <?php endif; ?> 
-        <img src="pic.jpg" alt="" width="<?php echo $size; ?>" border= " 5px solid" style="color: <?php echo $border; ?>">
+        <img src="myphoto.jpg" alt="" width="<?php echo $size; ?>" border= " 5px solid" style="color: <?php echo $border; ?>">
     </form>
 </body>
 </html>

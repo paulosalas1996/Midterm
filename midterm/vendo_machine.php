@@ -28,7 +28,7 @@
         </select>
 
         <label for="QtySoda"> Quantity: </label>
-        <input type="number" name="QtySoda" id="QtySoda" min="1" max="99999999999">
+        <input type="number" name="QtySoda" id="QtySoda" min="1" max="100">
         <input type="submit" name="CheckOutbtn" value ="Check Out">
         </fieldset>
     </form>
@@ -55,7 +55,6 @@
                 foreach($arrSoda as $key => $SodaValue){
                     foreach($arrSize as $key => $SizeValue){
 
-                        //For Regular Selection
                         if (($SodaValue == "Coke")&&($SizeValue == "Regular")){
                             $coke = 15 * $SodaQty;
                             $QtyCoke = $SodaQty;
@@ -108,7 +107,7 @@
                             }         
                         }
 
-                        //For Upsize Selection 
+                         
                         if (($SodaValue == "Coke")&&($SizeValue == "UpSize")){
                             $coke = 20*$SodaQty;
                             $QtyCoke = $SodaQty;
@@ -161,7 +160,7 @@
                             }   
                         }
 
-                        // For Jumbo size Selection
+                        
                         if (($SodaValue == "Coke")&&($SizeValue == "Jumbo")){
                             $coke = 25 * $SodaQty; 
                             $QtyCoke = $SodaQty;

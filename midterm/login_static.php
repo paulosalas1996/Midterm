@@ -6,6 +6,138 @@
     <link rel="stylesheet" href="login.css">
     <title>Static login</title>
 </head>
+            <?php
+                   $users = array(
+                          
+                           array(
+                               'UserType' => 'Admin',
+                               'Username' => 'admin',
+                               'Password' => 'pass1234'
+                           ),
+                           array(
+                               'UserType' => 'Admin',
+                               'Username' => 'renmark',
+                               'Password' => 'pogi1234'
+                           ),
+                           array(
+                               'UserType' =>'Content Manager',
+                               'Username' => 'pepito',
+                               'Password' => 'manaloto'
+                           ),
+                           array(
+                               'UserType' => 'Content Manager',
+                               'Username' => 'juan',
+                               'Password' => 'delacruz' 
+                           ),
+                           array(
+                               'UserType' => 'System Users',
+                               'Username' => 'pedro',
+                               'Password' => 'penduko'
+                           )        
+                   );
+
+                   if (isset($_POST['Signin'])) {
+                       $status = $_POST['userSelect'];
+                       $name = $_POST['userName'];
+                       $password = $_POST['password'];
+
+                       if ($status === $users[0]['UserType']) {
+                           if ($name === $users[0]['Username']){
+                               if($password === $users[0]['Password'])
+                                   echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                   <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    Welcome to the System: '. $name .'
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                   </button>
+                                   </div>
+                                   </div>';
+                               }
+                               elseif ($name === $users[1]['Username']){
+                                   if($password === $users[1]['Password'])
+                                       echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                       <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        Welcome to the System: '. $name .'
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                       </button>
+                                       </div>
+                                       </div>';
+                                   }
+                                   else{
+                                    echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                      Invalid Username / Password
+                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                  </button>
+                                  </div>
+                                  </div>';
+                               }
+                       }
+                       
+                       if ($status === $users[2]['UserType']) {
+                           if ($name === $users[2]['Username']){
+                               if($password === $users[2]['Password'])
+                               '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                               <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                Welcome to the System: '. $name .'
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                               </button>
+                               </div>
+                               </div>';
+                               }
+                               elseif ($name === $users[3]['Username']){
+                                   if($password === $users[3]['Password'])
+                                       echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                       <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        Welcome to the System: '. $name .'
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                         <span aria-hidden="true">&times;</span>
+                                       </button>
+                                       </div>
+                                       </div>';
+                                   }
+                                   else{
+                                       echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                       <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                           Invalid Username / Password
+                                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                           <span aria-hidden="true">&times;</span>
+                                           </button>
+                                       </div>
+                                   </div>';
+                               }
+                       }
+                       if ($status === $users[4]['UserType']) {
+                        if ($name === $users[4]['Username']){
+                            if($password === $users[4]['Password'])
+                                echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                 Welcome to the System: '. $name .'
+                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                </div>';
+                            }
+                            else{
+                                echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    Invalid Username / Password
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>';
+                            }
+                    }
+                }
+
+           ?>        
+
+
 <body>
 <div id="login">
     <div class="container">
@@ -16,101 +148,18 @@
             
             <form class="form-signin" method="post">
                
-                //Dropdown list
                 <select name="userSelect"  class="form-control" id="userSelect">
                     <option value="Admin">Admin</option>
                     <option value="Content Manager">Content Manager</option>
-                    <option value="System Users">System User</option>
+                    <option value="System Users">System Users</option>
                 </select>
                 <br>
-                //Username
                 <input type="text" name="userName" id="inputEmail" class="form-control" placeholder="User Name" required autofocus>
-                //Password
                 <input type="password"  name="password" id="inputPassword" class="form-control" placeholder="Password" required>
              
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="Signin">Sign in</button>
             </form>
-                
-                <?php
-                    // for Array list 
-                    $users = array(
-                            //0
-                            array(
-                                'UserType' => 'Admin',
-                                'Username' => 'admin',
-                                'Password' => 'pass1234'
-                            ),
-                            //1
-                            array(
-                                'UserType' => 'Admin',
-                                'Username' => 'renmark',
-                                'Password' => 'pogi1234'
-                            ),
-                            //2
-                            array(
-                                'UserType' =>'Content Manager',
-                                'Username' => 'pepito',
-                                'Password' => 'manaloto'
-                            ),
-                            //3
-                            array(
-                                'UserType' => 'Content Manager',
-                                'Username' => 'juan',
-                                'Password' => 'delacruz' 
-                            ),
-                            //4
-                            array(
-                                'UserType' => 'System User',
-                                'Username' => 'pedro',
-                                'Password' => 'penduko'
-                            )        
-                    );
-
-                    if (isset($_POST['Signin'])) {
-                        $status = $_POST['userSelect'];
-                        $name = $_POST['userName'];
-                        $password = $_POST['password'];
-                        
-                        //For Admin
-                        if ($status === $users[0]['UserType']) {
-                            if ($name === $users[0]['Username']){
-                                if($password === $users[0]['Password'])
-                                    echo '<div class="alert alert-success" role="alert">Welcome to system ' . $name .'</div>';
-                                }
-                                elseif ($name === $users[1]['Username']){
-                                    if($password === $users[1]['Password'])
-                                        echo '<div class="alert alert-success" role="alert">Welcome to system ' . $name .'</div>';
-                                    }
-                                    else{
-                                        echo '<div class=" alert alert-danger" role="alert">Invalid Username/Password </div>';
-                                }
-                        }
-                        //for Contert Manager
-                        if ($status === $users[2]['UserType']) {
-                            if ($name === $users[2]['Username']){
-                                if($password === $users[2]['Password'])
-                                    echo '<div class="alert alert-success" role="alert" >Welcome to system ' . $name .'</div>';
-                                }
-                                elseif ($name === $users[3]['Username']){
-                                    if($password === $users[3]['Password'])
-                                        echo '<div class="alert alert-success" role="alert">Welcome to system ' . $name .'</div>';
-                                    }
-                                    else{
-                                        echo '<div class=" alert alert-danger" role="alert">Invalid Username/Password </div>';
-                                }
-                        }
-                        //for System User
-                        if ($status === $users[4]['UserType']) {
-                            if ($name === $users[4]['Username']){
-                                if($password === $users[4]['Password'])
-                                    echo '<div class="alert alert-success" role="alert" >Welcome to system ' . $name .'</div>';
-                                }
-                                else{
-                                    echo '<div class=" alert alert-danger" role="alert">Invalid Username/Password </div>';
-                                }
-                        }
-                    }
-            ?>
+           
         </div>
     </div>
 </div>
