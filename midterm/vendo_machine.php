@@ -213,7 +213,7 @@
                         }
                     }
                 }
-                $TotalAmnt = $coke + $sprite + $royal + $pepsi + $MountainDew;
+                $TotalAmnt = $coke + $sprite + $royal + $pepsi + $mountainDew;
                 $TotalSoda = $QtyCoke + $QtySprite + $QtyRoyal + $QtyPepsi +  $QtyMountaindew;
                 echo '<b>Total Number of Items: </b>',$TotalAmnt,'<br>';
                 echo '<b>Total Amount: </b>',$TotalSoda,'<br>';
