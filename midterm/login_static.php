@@ -1,3 +1,133 @@
+ <?php
+    $users = array(
+                          
+         array(
+             'UserType' => 'Admin',
+             'Username' => 'admin',
+             'Password' => 'pass1234'
+             ),
+        array(
+            'UserType' => 'Admin',
+            'Username' => 'renmark',
+            'Password' => 'pogi1234'
+             ),
+         array(
+            'UserType' =>'Content Manager',
+            'Username' => 'pepito',
+            'Password' => 'manaloto'
+             ),
+        array(
+            'UserType' => 'Content Manager',
+            'Username' => 'juan',
+            'Password' => 'delacruz' 
+             ),
+        array(
+            'UserType' => 'System Users',
+            'Username' => 'pedro',
+            'Password' => 'penduko'
+            )        
+    );
+    
+    if (isset($_POST['Signin'])) {
+        $status = $_POST['userSelect'];
+        $name = $_POST['userName'];
+        $password = $_POST['password'];
+
+        if ($status === $users[0]['UserType']) {
+            if ($name === $users[0]['Username']){
+                if($password === $users[0]['Password'])
+                    echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                 Welcome to the System: '. $name .'
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                   </button>
+                                </div>
+                            </div>';
+            }
+            elseif ($name === $users[1]['Username']){
+                if($password === $users[1]['Password'])
+                    echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                             Welcome to the System: '. $name .'
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                         </div>';
+                }
+                 else{
+                     echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                Invalid Username / Password
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>';
+                }
+        }
+                       
+        if ($status === $users[2]['UserType']) {
+            if ($name === $users[2]['Username']){
+                if($password === $users[2]['Password'])
+                    echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Welcome to the System: '. $name .'
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                               </button>
+                            </div>
+                         </div>';
+            }
+             elseif ($name === $users[3]['Username']){
+                if($password === $users[3]['Password'])
+                    echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Welcome to the System: '. $name .'
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                </button>
+                             </div>
+                        </div>';
+            }
+            else{
+                echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Invalid Username / Password
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>';
+             }
+        }
+        if ($status === $users[4]['UserType']) {
+                if ($name === $users[4]['Username']){
+                     if($password === $users[4]['Password'])
+                        echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                 Welcome to the System: '. $name .'
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>';
+                }
+                else{
+                    echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                             Invalid Username / Password
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>';
+                   }
+        }
+     }
+
+ ?>        
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,138 +136,6 @@
     <link rel="stylesheet" href="login.css">
     <title>Static login</title>
 </head>
-            <?php
-                   $users = array(
-                          
-                           array(
-                               'UserType' => 'Admin',
-                               'Username' => 'admin',
-                               'Password' => 'pass1234'
-                           ),
-                           array(
-                               'UserType' => 'Admin',
-                               'Username' => 'renmark',
-                               'Password' => 'pogi1234'
-                           ),
-                           array(
-                               'UserType' =>'Content Manager',
-                               'Username' => 'pepito',
-                               'Password' => 'manaloto'
-                           ),
-                           array(
-                               'UserType' => 'Content Manager',
-                               'Username' => 'juan',
-                               'Password' => 'delacruz' 
-                           ),
-                           array(
-                               'UserType' => 'System Users',
-                               'Username' => 'pedro',
-                               'Password' => 'penduko'
-                           )        
-                   );
-
-                   if (isset($_POST['Signin'])) {
-                       $status = $_POST['userSelect'];
-                       $name = $_POST['userName'];
-                       $password = $_POST['password'];
-
-                       if ($status === $users[0]['UserType']) {
-                           if ($name === $users[0]['Username']){
-                               if($password === $users[0]['Password'])
-                                   echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
-                                   <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    Welcome to the System: '. $name .'
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                     <span aria-hidden="true">&times;</span>
-                                   </button>
-                                   </div>
-                                   </div>';
-                               }
-                               elseif ($name === $users[1]['Username']){
-                                   if($password === $users[1]['Password'])
-                                       echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
-                                       <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        Welcome to the System: '. $name .'
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                         <span aria-hidden="true">&times;</span>
-                                       </button>
-                                       </div>
-                                       </div>';
-                                   }
-                                   else{
-                                    echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                      Invalid Username / Password
-                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                  </button>
-                                  </div>
-                                  </div>';
-                               }
-                       }
-                       
-                       if ($status === $users[2]['UserType']) {
-                           if ($name === $users[2]['Username']){
-                               if($password === $users[2]['Password'])
-                               '<div class="container-fluid text-center w-25  p-3 mx-auto">
-                               <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                Welcome to the System: '. $name .'
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                 <span aria-hidden="true">&times;</span>
-                               </button>
-                               </div>
-                               </div>';
-                               }
-                               elseif ($name === $users[3]['Username']){
-                                   if($password === $users[3]['Password'])
-                                       echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
-                                       <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        Welcome to the System: '. $name .'
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                         <span aria-hidden="true">&times;</span>
-                                       </button>
-                                       </div>
-                                       </div>';
-                                   }
-                                   else{
-                                       echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
-                                       <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                           Invalid Username / Password
-                                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                           <span aria-hidden="true">&times;</span>
-                                           </button>
-                                       </div>
-                                   </div>';
-                               }
-                       }
-                       if ($status === $users[4]['UserType']) {
-                        if ($name === $users[4]['Username']){
-                            if($password === $users[4]['Password'])
-                                echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                 Welcome to the System: '. $name .'
-                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                                </div>';
-                            }
-                            else{
-                                echo '<div class="container-fluid text-center w-25  p-3 mx-auto">
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    Invalid Username / Password
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                            </div>';
-                            }
-                    }
-                }
-
-           ?>        
-
-
 <body>
 <div id="login">
     <div class="container">
@@ -163,7 +161,6 @@
         </div>
     </div>
 </div>
-
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js

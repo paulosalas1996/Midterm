@@ -39,7 +39,7 @@
                 echo '<hr>';
                 echo '<b>No Selected Product, Try Again!</b>';
             }
-            }
+        }
         error_reporting(0);
         if(isset($_POST['CheckOutbtn']) &&
             isset($_POST['sodas']) && 
@@ -50,165 +50,165 @@
 
                 $arrSoda = $_POST['sodas'];
                 $arrSize = $_POST['size'];
-                $SodaQty = $_POST['QtySoda'];
+                $sodaQty = $_POST['QtySoda'];
 
-                foreach($arrSoda as $key => $SodaValue){
-                    foreach($arrSize as $key => $SizeValue){
+                foreach($arrSoda as $key => $sodaValue){
+                    foreach($arrSize as $key => $sizeValue){
 
-                        if (($SodaValue == "Coke")&&($SizeValue == "Regular")){
-                            $coke = 15 * $SodaQty;
-                            $QtyCoke = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$coke,'</li></ul><br>';
+                        if (($sodaValue == "Coke")&&($sizeValue == "Regular")){
+                            $coke = 15 * $sodaQty;
+                            $QtyCoke = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$coke,'</li></ul>';
                             }
                             else{
-                                echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$coke,'</li></ul><br>';
+                                echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$coke,'</li></ul>';
                             }      
                         }
-                        if (($SodaValue == "Sprite")&&($SizeValue == "Regular")){
-                            $sprite = 20 * $SodaQty;
-                            $QtySprite = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul><br>';
+                        if (($sodaValue == "Sprite")&&($sizeValue == "Regular")){
+                            $sprite = 20 * $sodaQty;
+                            $QtySprite = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul>';
                             }
                             else{
-                                echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul><br>';
+                                echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul>';
                             }      
                                         
                         }
-                        if (($SodaValue == "Royal")&&($SizeValue == "Regular")){
-                            $royal = 20 * $SodaQty; 
-                            $QtyRoyal = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$royal,'</li></ul><br>';
+                        if (($sodaValue == "Royal")&&($sizeValue == "Regular")){
+                            $royal = 20 * $sodaQty; 
+                            $QtyRoyal = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$royal,'</li></ul>';
                             }
                             else{
-                                echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$royal,'</li></u><br>';
+                                echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$royal,'</li></ul>';
                             }    
                         }
-                        if (($SodaValue == "Pepsi")&&($SizeValue == "Regular")){
-                            $pepsi = 15 * $SodaQty;
-                            $QtyPepsi = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$pepsi,'</li></ul><br>';
+                        if (($sodaValue == "Pepsi")&&($sizeValue == "Regular")){
+                            $pepsi = 15 * $sodaQty;
+                            $QtyPepsi = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$odaValue,' amounting to ',' ₱ ',$pepsi,'</li></ul>';
                             }
                             else {
-                                echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$pepsi,'</li></ul><br>';
+                                echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$pepsi,'</li></ul>';
                             }                       
                         }
-                        if (($SodaValue == "Mountaindew")&&($SizeValue == "Regular")){
-                            $MountainDew = 20 * $SodaQty;
-                            $QtyMountaindew = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$MountainDew,'</li></ul><br>';
+                        if (($sodaValue == "Mountaindew")&&($sizeValue == "Regular")){
+                            $mountainDew = 20 * $sodaQty;
+                            $QtyMountaindew = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$mountainDew,'</li></ul>';
                             }
                             else {
-                                echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$MountainDew,'</li></ul> <br>';
+                                echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$mountainDew,'</li></ul>';
                             }         
                         }
 
                          
-                        if (($SodaValue == "Coke")&&($SizeValue == "UpSize")){
-                            $coke = 20*$SodaQty;
-                            $QtyCoke = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$coke,'</li></ul> <br>';
+                        if (($sodaValue == "Coke")&&($sizeValue == "UpSize")){
+                            $coke = 20*$sodaQty;
+                            $QtyCoke = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$coke,'</li></ul>';
                             }
                             else{
-                                echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$coke,'</li></ul><br>';
+                                echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$coke,'</li></ul>';
                             }                        
                         }
-                        if (($SodaValue == "Sprite")&&($SizeValue == "UpSize")){
-                            $sprite =25*$SodaQty; 
-                            $QtySprite = $SodaQty;
+                        if (($sodaValue == "Sprite")&&($sizeValue == "UpSize")){
+                            $sprite =25*$sodaQty; 
+                            $QtySprite = $sodaQty;
 
                             if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul><br>';
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul>';
                             }
                             else{
-                                echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul><br>';
+                                echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul>';
                             }                
                         }
-                        if (($SodaValue == "Royal")&&($SizeValue == "UpSize")){
+                        if (($sodaValue == "Royal")&&($sizeValue == "UpSize")){
                             $royal = 25*$SodaQty; 
                             $QtyRoyal = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$royal,'</li></ul><br>';
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$royal,'</li></ul>';
                             }
                             else{
-                            echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$royal,'</li></ul><br>';
+                            echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$royal,'</li></ul>';
                             }   
                         }
-                        if (($SodaValue == "Pepsi")&&($SizeValue == "UpSize")){
-                            $pepsi = 20 * $SodaQty;
-                            $QtyPepsi = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$pepsi,'</li></u><br>';
+                        if (($sodaValue == "Pepsi")&&($sizeValue == "UpSize")){
+                            $pepsi = 20 * $sodaQty;
+                            $QtyPepsi = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$pepsi,'</li></u>';
                             }
                             else{
-                                echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$pepsi,'</li>,/ul><br>';
+                                echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$pepsi,'</li></ul>';
                             }                         
                         }
-                        if (($SodaValue == "Mountaindew")&&($SizeValue == "UpSize")){
-                            $MountainDew = 25 * $SodaQty;
-                            $QtyMountaindew = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$MountainDew,'</li></ul><br>';
+                        if (($sodaValue == "Mountaindew")&&($sizeValue == "UpSize")){
+                            $mountainDew = 25 * $sodaQty;
+                            $QtyMountaindew = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$mountainDew,'</li></ul>';
                             }
                             else {
-                            echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$MountainDew,'</li></ul><br>';
+                            echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$mountainDew,'</li></ul>';
                             }   
                         }
 
                         
-                        if (($SodaValue == "Coke")&&($SizeValue == "Jumbo")){
-                            $coke = 25 * $SodaQty; 
-                            $QtyCoke = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$coke,'</li></ul><br>';
+                        if (($sodaValue == "Coke")&&($sizeValue == "Jumbo")){
+                            $coke = 25 * $sodaQty; 
+                            $QtyCoke = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$coke,'</li></ul>';
                             }
                             else {
-                            echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$coke,'</li></ul><br>';
+                            echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$coke,'</li></ul>';
                             }   
                         }
-                        if (($SodaValue == "Sprite")&&($SizeValue == "Jumbo")){
-                            $sprite = 30 * $SodaQty;
-                            $QtySprite = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul><br>';
+                        if (($sodaValue == "Sprite")&&($sizeValue == "Jumbo")){
+                            $sprite = 30 * $sodaQty;
+                            $QtySprite = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul>';
                             }
                             else {
-                            echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul><br>';
+                            echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$sprite,'</li></ul>';
                             }                  
                         }
-                        if (($SodaValue == "Royal")&&($SizeValue == "Jumbo")){
-                            $royal= 30 * $SodaQty; 
-                            $QtyRoyal = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$royal,'</li></ul><br>';
+                        if (($sodaValue == "Royal")&&($sizeValue == "Jumbo")){
+                            $royal= 30 * $sodaQty; 
+                            $QtyRoyal = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$royal,'</li></ul>';
                             }
                             else{
-                            echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$royal,'</li></ul><br>';
+                            echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$royal,'</li></ul>';
                             }                    
                         }
-                        if (($SodaValue == "Pepsi")&&($SizeValue == "Jumbo")){
-                            $pepsi= 25 * $SodaQty;
-                            $QtyPepsi = $SodaQty; 
-                            if($SodaQty > 1){
-                                echo'<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$pepsi,'</li></ul><br>';
+                        if (($sodaValue == "Pepsi")&&($sizeValue == "Jumbo")){
+                            $pepsi= 25 * $sodaQty;
+                            $QtyPepsi = $sodaQty; 
+                            if($sodaQty > 1){
+                                echo'<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$pepsi,'</li></ul>';
                             }
                             else{
-                            echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$pepsi,'</li></ul><br>';
+                            echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$pepsi,'</li></ul>';
                             }                           
                         }
-                        if (($SodaValue == "Mountaindew")&&($SizeValue == "Jumbo")){
-                            $MountainDew = 30 * $SodaQty;
-                            $QtyMountaindew = $SodaQty;
-                            if($SodaQty > 1){
-                                echo '<ul><li> ',$SodaQty,' ','pieces of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$MountainDew,'</li></ul> <br>';
+                        if (($sodaValue == "Mountaindew")&&($sizeValue == "Jumbo")){
+                            $mountainDew = 30 * $sodaQty;
+                            $QtyMountaindew = $sodaQty;
+                            if($sodaQty > 1){
+                                echo '<ul><li> ',$sodaQty,' ','pieces of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$mountainDew,'</li></ul>';
                             }
                             else{
-                                echo '<ul><li> ',$SodaQty,' ','piece of ',$SizeValue,' ',$SodaValue,' amounting to ',' ₱ ',$MountainDew,'</li></ul><br>';
+                                echo '<ul><li> ',$sodaQty,' ','piece of ',$sizeValue,' ',$sodaValue,' amounting to ',' ₱ ',$mountainDew,'</li></ul>';
                             }      
                         }
                     }
